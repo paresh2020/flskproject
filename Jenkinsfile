@@ -20,7 +20,7 @@ pipeline {
             {
                 steps
                 {
-                sh 'sudo docker run -p 5000:5000 flaskr'
+                sh 'sudo docker run -d -p 5000:5000 flaskr'
                 }
             }
             stage('Test Image')
