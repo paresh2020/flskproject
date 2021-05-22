@@ -6,8 +6,9 @@ ENV FLASK_ENV=development
 COPY . /app
 
 WORKDIR /app
-
+RUN pip install -r requirements.txt
 RUN pip install --editable .
+
 
 RUN flask init-db
 
@@ -16,7 +17,7 @@ RUN flask init-db
 
 EXPOSE 5000
 
-CMD [ "flask", "run", "--host=0.0.0.0" ]
+CMD [ "flask", "run","-d", "--host=0.0.0.0" ]
 
 
 
